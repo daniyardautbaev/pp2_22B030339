@@ -1,0 +1,240 @@
+PYTHON LISTS
+#ex 1Print the second item in the fruits list.
+fruits = ["apple", "banana", "cherry"]
+print(fruits[1])
+#ex 2 Change the value from "apple" to "kiwi", in the fruits list.
+fruits = ["apple", "banana", "cherry"]
+fruits[0]="kiwi"
+#ex 3  Use the append method to add "orange" to the fruits list.
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")
+#ex 4 Use the insert method to add "lemon" as the second item in the fruits list.
+fruits = ["apple", "banana", "cherry"]
+fruits.insert(1,"lemon")
+#ex 5  Use the remove method to remove "banana" from the fruits list.
+fruits = ["apple", "banana", "cherry"]
+fruits.remove("banana")
+#ex 6 Use the remove method to remove "banana" from the fruits list.
+fruits = ["apple", "banana", "cherry"]
+fruits.remove("banana")
+#ex7 Use a range of indexes to print the third, fourth, and fifth item in the list.
+fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
+print(fruits[2:5])
+#ex 8 Use the correct syntax to print the number of items in the list.
+fruits = ["apple", "banana", "cherry"]
+print(len(fruits))
+PYTHON TUPLES
+# ex 1  Use the correct syntax to print the first item in the fruits tuple.
+fruits = ("apple", "banana", "cherry")
+print(fruits[0])
+#ex 2 Use the correct syntax to print the number of items in the fruits tuple.
+fruits = ("apple", "banana", "cherry")
+print(len(fruits))
+#ex 3 Use negative indexing to print the last item in the tuple.
+fruits = ("apple", "banana", "cherry")
+print(fruits[-1])
+#ex 4 Use a range of indexes to print the third, fourth, and fifth item in the tuple.
+fruits = ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
+print(fruits[2:5])
+PYTHON SETS 
+# ex 1Check if "apple" is present in the fruits set.
+fruits = {"apple", "banana", "cherry"}
+if "apple" in fruits:
+  print("Yes, apple is a fruit!")
+#2 Use the add method to add "orange" to the fruits set.
+fruits = {"apple", "banana", "cherry"}
+fruits.add("orange")
+#3 Use the correct method to add multiple items (more_fruits) to the fruits set.
+fruits = {"apple", "banana", "cherry"}
+more_fruits = ["orange", "mango", "grapes"]
+fruits.update(more_fruits)
+#4 Use the remove method to remove "banana" from the fruits set.
+fruits = {"apple", "banana", "cherry"}
+fruits.remove("banana")
+#5 Use the discard method to remove "banana" from the fruits set.
+fruits = {"apple", "banana", "cherry"}
+fruits.discard("banana")
+PYTHON DICTIONARIES
+#1Use the get method to print the value of the "model" key of the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+print(car.get("model"))
+#2 Change the "year" value from 1964 to 2020.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car["year"] = 2020
+#3 Add the key/value pair "color" : "red" to the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car["color"] = "red"
+#4 Use the pop method to remove "model" from the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.pop("model")
+#5 Use the clear method to empty the car dictionary.
+car =	{
+  "brand": "Ford",
+  "model": "Mustang",
+  "year": 1964
+}
+car.clear()
+PYTHON IF..ELSE 
+#1Print "Hello World" if a is greater than b.
+a = 50
+b = 10
+if a > b:
+    print("Hello World")
+#2Print "Hello World" if a is not equal to b.
+a = 50
+b = 10
+if a != b:
+    print("Hello World")
+#3 Print "Yes" if a is equal to b, otherwise print "No".
+a = 50
+b = 10
+if a == b: print("Yes")
+else:
+    print("No")
+#4 Print "1" if a is equal to b, print "2" if a is greater than b, otherwise print "3".
+a = 50
+b = 10
+if a == b :
+    print("1")
+elif a >b :
+    print("2")
+else:
+    print("3")
+#5 Print "Hello" if a is equal to b, and c is equal to d.
+if a == b and c == d:
+  print("Hello")
+#6 Print "Hello" if a is equal to b, or if c is equal to d.
+if a == b or c == d:print("Hello")
+#7This example misses indentations to be correct. Insert the missing indentation to make the code correct:
+if 5 > 2:
+  print("Five is greater than two!")
+#8 Use the correct short hand syntax to put the following statement on one line:
+if 5 > 2: print("Five is greater than two!")
+#9 Use the correct short hand syntax to write the following conditional expression in one line:
+print("Yes") if 5 > 2 else print("No")
+PYTHON WHILE LOOPS
+#1Print i as long as i is less than 6.
+i = 1
+while i < 6 :
+    print(i)
+    i += 1
+#2 Stop the loop if i is 3.
+i = 1
+while i < 6:
+  if i == 3:
+    break
+    i += 1
+#3 In the loop, when i is 3, jump directly to the next iteration.
+i = 0
+while i < 6:
+  i += 1
+  if i == 3:
+    continue
+print(i)
+#4 Print a message once the condition is false.
+i = 1
+while i < 6:
+  print(i)
+  i += 1
+else:
+	print("i is no longer less than 6")    
+PYTHON FOR LOOPS 
+#1 Loop through the items in the fruits list.
+fruits = ["apple", "banana", "cherry"]
+for x in fruits :
+    print(x)
+#2In the loop, when the item value is "banana", jump directly to the next item.
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    continue
+print(x)
+#3 Use the range function to loop through a code set 6 times.
+for x in range(6):
+    print(x)
+#4 Exit the loop when x is "banana".
+fruits = ["apple", "banana", "cherry"]
+for x in fruits:
+  if x == "banana":
+    break
+print(x)
+PYTHON FUNCTIONS 
+#1 Create a function named my_function.
+def my_function():
+  print("Hello from a function")
+#2 Execute a function named my_function.
+def my_function():
+  print("Hello from a function")
+  my_function()
+#3 Inside a function with two parameters, print the first parameter.
+def my_function(fname, lname):
+  print(fname)
+#4  Let the function return the x parameter + 5.
+def my_function(x):
+    return x+5
+#5 If you do not know the number of arguments that will be passed into your function, there is a prefix you can add in the function definition, which prefix?
+def my_function(*kids):
+  print("The youngest child is " + kids[2])
+#6 If you do not know the number of keyword arguments that will be passed into your function, there is a prefix you can add in the function definition, which prefix?
+def my_function(**kid):
+  print("His last name is " + kid["lname"])
+PYTHON LAMBDA
+#1Create a lambda function that takes one parameter (a) and returns it.
+x = lambda a:a
+PYTHON CLASSES 
+#1 Create a class named MyClass:
+class MyClass:
+  x = 5
+#2 Create an object of MyClass called p1:
+class MyClass:
+  x = 5 
+  p1 = MyClass()
+#3 Use the p1 object to print the value of x:
+class MyClass:
+  x = 5
+p1 = MyClass()
+print(p1.x)
+#4 What is the correct syntax to assign a "init" function to a class?
+class Person:
+  def  __init__ (self, name, age):
+    self.name = name
+    self.age = age
+PYTHON INHERITANCE 
+#1
+class Student(Person):
+#2 
+    class Person:
+        def __init__(self, fname):
+            self.firstname = fname
+    def printname(self):
+        print(self.firstname)
+class Student(Person):
+  pass
+x = Student("Mike")
+x.printname()
+PYTHON MODULES 
+#1
+import mymodule
+#2
+import mymodule as mx
+#3
+import mymodule
+print(dir(mymodule))
+# 4
+from mymodule import person1
