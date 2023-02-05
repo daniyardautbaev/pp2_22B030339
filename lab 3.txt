@@ -1,15 +1,19 @@
-	Lab 3
-Classes:1 
-class StringOps:
+	Classes
+1:class StringOps:
     def __init__(self):
-        self.s = ""
+        self.str = ""
 
     def getString(self):
-        self.s = input("Enter a string: ")
+        self.str = input("Enter a string: ")
 
     def printString(self):
-        print(self.s.upper())
-2 class Shape:
+        print(self.str.upper())
+
+# Example
+string_ops = StringOps()
+string_ops.getString()
+string_ops.printString()
+2:class Shape:
     def __init__(self):
         pass
 
@@ -22,21 +26,11 @@ class Square(Shape):
 
     def area(self):
         return self.length * self.length
-3 class Shape:
-    def __init__(self):
-        pass
 
-    def area(self):
-        return 0
+square = Square(5)
+print("Area of the square:", square.area())
 
-class Square(Shape):
-    def __init__(self, length):
-        self.length = length
-
-    def area(self):
-        return self.length * self.length
-
-class Rectangle(Shape):
+3:class Rectangle(Shape):
     def __init__(self, length, width):
         self.length = length
         self.width = width
@@ -44,7 +38,10 @@ class Rectangle(Shape):
     def area(self):
         return self.length * self.width
 
-4 import math
+rectangle = Rectangle(4, 6)
+print("Area of the rectangle:", rectangle.area())
+
+4:import math
 
 class Point:
     def __init__(self, x=0, y=0):
@@ -52,80 +49,79 @@ class Point:
         self.y = y
 
     def show(self):
-        print(f"Point({self.x}, {self.y})")
+        print(f"({self.x}, {self.y})")
 
     def move(self, x, y):
         self.x += x
         self.y += y
 
-    def dist(self, other):
-        return math.sqrt((self.x - other.x)**2 + (self.y - other.y)**2)
+    def dist(self, other_point):
+        return math.sqrt((self.x - other_point.x)**2 + (self.y - other_point.y)**2)
+p1 = Point(3, 4)
+p2 = Point(6, 8)
 
-5 class Account:
-    def __init__(self, owner, balance):
+p1.show()
+p2.show()
+
+print("Distance between two points:", p1.dist(p2))
+5:class BankAccount:
+    def __init__(self, owner, balance=0):
         self.owner = owner
         self.balance = balance
 
     def deposit(self, amount):
         self.balance += amount
-        print(f"{amount} has been deposited to the account.")
+        print(f"Deposited ${amount}. New balance: ${self.balance}")
 
     def withdraw(self, amount):
         if amount > self.balance:
-            print("Insufficient balance.")
+            print(f"Withdrawal failed. Available balance: ${self.balance}")
         else:
             self.balance -= amount
-            print(f"{amount} has been withdrawn from the account.")
+            print(f"Withdrew ${amount}. New balance: ${self.balance}")
 
-# creating an instance of the class
-account = Account("John Doe", 100)
 
-# making several deposits and withdrawals
-account.deposit(50)
-account.withdraw(150)
-account.withdraw(25)
-6 def is_prime(n):
-    if n <= 1:
+account = BankAccount("Daniyar Dautbaev", 1000)
+
+account.deposit(500)
+account.withdraw(1500)
+account.withdraw(500)
+
+6:def is_prime(number):
+    if number <= 1:
         return False
-    for i in range(2, int(n**0.5)+1):
-        if n % i == 0:
+    for i in range(2, number):
+        if number % i == 0:
             return False
     return True
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# using the filter function with a lambda function to find prime numbers
 prime_numbers = list(filter(lambda x: is_prime(x), numbers))
 
-print("Prime numbers:", prime_numbers)
+print("Prime numbers in the list:", prime_numbers)
 
 
-Functions
-1: def getOun(gramm):
+
+Functions:
+1:def getOun(gramm):
     return gramm * 28.3495231
 
 print(getOun(100))
 
-2: def fahrenheit_to_centigrade(fahrenheit):
-    return (5/9) * (fahrenheit - 32)
+2:fahrenheit = float(input("Enter temperature in Fahrenheit: "))
 
-# read in the Fahrenheit temperature
-fahrenheit = float(input("Enter the temperature in Fahrenheit: "))
+centigrade = (5 / 9) * (fahrenheit - 32)
 
-# calculate the equivalent centigrade temperature
-centigrade = fahrenheit_to_centigrade(fahrenheit)
+print(f"Temperature in Centigrade: {centigrade}")
 
-# display the result
-print(f"{fahrenheit}°F is equivalent to {centigrade}°C.")
-
+3:
 3:def solve(numheads, numlegs):
     for num_chickens in range(numheads + 1):
         num_rabbits = numheads - num_chickens
         if (2 * num_chickens) + (4 * num_rabbits) == numlegs:
             return (num_chickens, num_rabbits)
     return None
-
-# test the function
 numheads = 35
 numlegs = 94
 result = solve(numheads, numlegs)
@@ -133,47 +129,37 @@ if result:
     print(f"There are {result[0]} chickens and {result[1]} rabbits in the farm.")
 else:
     print("No solution found.")
-4:def is_prime(n):
-    if n <= 1:
+
+4:def is_prime(number):
+    if number <= 1:
         return False
-    for i in range(2, int(n**0.5)+1):
-        if n % i == 0:
+    for i in range(2, number):
+        if number % i == 0:
             return False
     return True
 
-def filter_prime(numbers):
-    return [n for n in numbers if is_prime(n)]
+def filter_primes(numbers):
+    return list(filter(lambda x: is_prime(x), numbers))
 
-# test the function
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-prime_numbers = filter_prime(numbers)
+numbers = list(map(int, input("Enter numbers separated by spaces: ").split()))
+
+prime_numbers = filter_primes(numbers)
+
 print("Prime numbers:", prime_numbers)
+5:import itertools
 
-5: def permute(data, i, length):
-    if i == length:
-        print("".join(data))
-    else:
-        for j in range(i, length):
-            data[i], data[j] = data[j], data[i]
-            permute(data, i + 1, length)
-            data[i], data[j] = data[j], data[i]
+def print_permutations(string):
+    permutations = list(itertools.permutations(string))
+    for permutation in permutations:
+        print(''.join(permutation))
 
-def permutations(string):
-    n = len(string)
-    data = list(string)
-    permute(data, 0, n)
-
-# test the function
-string = "abc"
-print("Permutations of", string, ":")
-permutations(string)
-
-6: def reverse_sentence(sentence):
+string = input("Enter a string: ")
+print("All permutations:")
+print_permutations(string)
+6:def reverse_sentence(sentence):
     words = sentence.split()
     return " ".join(reversed(words))
-
-# test the function
-sentence = "We are ready"
+sentence = "We "# eW
 print("Reversed sentence:", reverse_sentence(sentence))
 
 7:def has_33(nums):
@@ -197,14 +183,13 @@ def sphere_volume(radius):
     for item in lst:
         if item not in unique:
             unique.append(item)
-    return unique
+    return unique	
 11:def is_palidrome(word):
     if word==word[::-1]:
         return True
     else:
         return False
-print(is_palidrome("word"))#false
-
+print(is_palidrome("word"))
 12:def histogram(numbers):
     for number in numbers:
         print("*" * number)
@@ -235,6 +220,7 @@ if __name__ == "__main__":
 if __name__ == "__main__":
     guess_number_game()
 
+Function2:
 Function 2:
 1:def is_above_threshold(movie):
     return movie['imdb'] > 5.5
@@ -248,5 +234,3 @@ Function 2:
 5:def average_category_imdb_score(movies, category):
     movies_in_category = get_movies_by_category(movies, category)
     return average_imdb_score(movies_in_category)
-
-
