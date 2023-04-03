@@ -11,7 +11,7 @@ red = (213, 50, 80)
 green = (0, 255, 0)
 blue = (50, 153, 213)
 
-dis = pygame.display.set_mode((600, 400))
+dis = pygame.display.set_mode((600, 400))#размер экрана
 pygame.display.set_caption('Snake')
 
 clock = pygame.time.Clock()
@@ -23,17 +23,17 @@ font_style = pygame.font.SysFont("bahnschrift", 25)
 score_font = pygame.font.SysFont("comicsansms", 35)
 
 
-def Your_score(score):
+def Your_score(score):#отображает текущий счет игрока на экране.
     value = score_font.render("Your Score: " + str(score), True, yellow)
     dis.blit(value, [0, 0])
 
 
-def our_snake(snake_block, snake_list):
+def our_snake(snake_block, snake_list):#рисует змею на игровом экране
     for x in snake_list:
         pygame.draw.rect(dis, green, [x[0], x[1], snake_block, snake_block])
 
 
-def message(msg, color):
+def message(msg, color):# выводит на экран сообщение
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [600 / 6, 400 / 3])
 
